@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Type a little, press a little</title>
+        <link rel="stylesheet" href="/lab4.css">
+        <script type="text/javascript" src="/lab4scripts.js" defer></script>
+    </head>
+    <body>
+        <h1 id="growableHeading">Are you sure that this heading is long enough?</h1>
+        <div class="mainGrid">
+            <div class="cell">
+                <form id="nameForm" onsubmit="return alertName();">
+                    <label for="nameBox">Name: </label>
+                    <input type="text" required id="nameBox" name="name">
+                    <input type="submit" value="Alert Me">
+                </form>
+            </div>
+            <div class="cell">
+                <button type="button" onclick="changePageColor();">Change Color</button>
+            </div>
+            <div class="cell">
+                <form id="validationForm" onsubmit="return checkText();">
+                    <label for="arbTextBox">Text Tester: </label>
+                    <input type="text" id="arbTextBox" name="arbText">
+                    <input type="submit" value="Validate Text">
+                </form>
+            </div>
+            <div class="cell">
+                <!-- This button will have an event listener for "click". -->
+                <button type="button" id="addTextButton">Add Text</button>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function alertName() {
+                const inputtedName = document
+                    .getElementById("nameForm")
+                    .elements["name"]
+                    .value;
+                greeting = "Hi " + inputtedName + "!";
+                alert(greeting);
+                document
+                    .getElementById("nameForm")
+                    .elements["name"]
+                    .value = "";
+                return false;
+            }
+        </script>
+    </body>
+</html>
